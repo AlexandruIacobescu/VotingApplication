@@ -1,7 +1,9 @@
 package com.AlexandruIacobescu.VotingApplication.controller;
 
 import com.AlexandruIacobescu.VotingApplication.entity.Query;
+import com.AlexandruIacobescu.VotingApplication.entity.Vote;
 import com.AlexandruIacobescu.VotingApplication.repository.QueryRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,11 @@ public class QueryController {
         return queryRepository.findAll();
     }
 
+    @PostMapping
+    public Query create(@RequestBody final Query query){
+        return queryRepository.saveAndFlush(query);
+    }
+
     @GetMapping
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public Query get(@PathVariable Long id){
@@ -30,5 +37,13 @@ public class QueryController {
     @RequestMapping(value = "/allowed_queries/{id}", method = RequestMethod.GET)
     public List<Query> get(@PathVariable String id){
         return queryRepository.getAllowedQueriesForMemberId(id);
+    }
+
+    @RequestMapping(value = "{id}/{query}", method = RequestMethod.PUT)
+    public Query update(@PathVariable Long id, @PathVariable Query query){
+        //TODO: Add validation that all attributes are passed in, otherwise return a 404 bad payload
+        Query existingQuery = queryRepository.getReferenceById(id);
+        BeanUtils.copyProperties(query, existingQuery, "voteId");
+        return queryRepository.saveAndFlush(existingQuery);
     }
 }
