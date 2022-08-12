@@ -1,5 +1,6 @@
 package com.AlexandruIacobescu.VotingApplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Query {
 
     @Id

@@ -2,11 +2,9 @@ package com.AlexandruIacobescu.VotingApplication.controller;
 
 import com.AlexandruIacobescu.VotingApplication.entity.Member;
 import com.AlexandruIacobescu.VotingApplication.repository.MemberRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,8 +21,27 @@ public class MemberController {
     }
 
     @GetMapping
-    @RequestMapping({"id"})
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public Member get(@PathVariable String id){
-        return memberRepository.getReferenceById(id);
+        return memberRepository.getOne(id);
+    }
+
+    @PostMapping
+    public Member create(@RequestBody final Member member){
+        return memberRepository.saveAndFlush(member);
+    }
+
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable String id){
+        // Watch out for cascading entries
+        memberRepository.deleteById(id);
+    }
+
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    public Member update(@PathVariable String id, @PathVariable Member member){
+        //TODO: Add validation that all attributes are passed in, otherwise return a 404 bad payload
+        Member existingMember = memberRepository.getOne(id);
+        BeanUtils.copyProperties(member, existingMember, "memberId");
+        return memberRepository.saveAndFlush(existingMember);
     }
 }

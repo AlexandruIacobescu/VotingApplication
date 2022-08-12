@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+import java.util.Optional;
+
 @SpringBootTest
 class QueryRepositoryTest {
 
@@ -20,5 +23,11 @@ class QueryRepositoryTest {
                 .build();
 
         queryRepository.save(query);
+    }
+
+    @Test
+    public void getQueriesAllowedForMemberId(){
+        List<Query> queries = queryRepository.getAllowedQueriesForMemberId("SaCoDi874521");
+        System.out.println(queries);
     }
 }
