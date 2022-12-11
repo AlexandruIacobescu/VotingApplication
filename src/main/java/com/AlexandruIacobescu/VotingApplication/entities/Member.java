@@ -1,10 +1,9 @@
-package com.AlexandruIacobescu.VotingApplication.entity;
+package com.AlexandruIacobescu.VotingApplication.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.sql.Date;
 
 @Data

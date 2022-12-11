@@ -1,4 +1,4 @@
-package com.AlexandruIacobescu.VotingApplication.entity;
+package com.AlexandruIacobescu.VotingApplication.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

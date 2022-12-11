@@ -1,15 +1,13 @@
-package com.AlexandruIacobescu.VotingApplication.controller;
+package com.AlexandruIacobescu.VotingApplication.controllers;
 
-import com.AlexandruIacobescu.VotingApplication.entity.Member;
-import com.AlexandruIacobescu.VotingApplication.entity.Vote;
-import com.AlexandruIacobescu.VotingApplication.repository.MemberRepository;
-import com.AlexandruIacobescu.VotingApplication.repository.VoteRepository;
+import com.AlexandruIacobescu.VotingApplication.entities.Vote;
+import com.AlexandruIacobescu.VotingApplication.repositories.MemberRepository;
+import com.AlexandruIacobescu.VotingApplication.repositories.VoteRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping({"/api/v1/votes"})

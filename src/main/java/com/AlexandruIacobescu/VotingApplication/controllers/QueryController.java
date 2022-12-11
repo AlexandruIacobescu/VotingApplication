@@ -1,11 +1,9 @@
-package com.AlexandruIacobescu.VotingApplication.controller;
+package com.AlexandruIacobescu.VotingApplication.controllers;
 
-import com.AlexandruIacobescu.VotingApplication.entity.Query;
-import com.AlexandruIacobescu.VotingApplication.entity.Vote;
-import com.AlexandruIacobescu.VotingApplication.repository.QueryRepository;
+import com.AlexandruIacobescu.VotingApplication.entities.Query;
+import com.AlexandruIacobescu.VotingApplication.repositories.QueryRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

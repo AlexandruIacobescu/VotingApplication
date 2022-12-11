@@ -1,4 +1,4 @@
-package com.AlexandruIacobescu.VotingApplication.pojo;
+package com.AlexandruIacobescu.VotingApplication.enums;
 
 public enum Category {
     MANAGER,

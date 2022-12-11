@@ -1,11 +1,9 @@
-package com.AlexandruIacobescu.VotingApplication.service;
+package com.AlexandruIacobescu.VotingApplication.services;
 
-import com.AlexandruIacobescu.VotingApplication.entity.Query;
-import com.AlexandruIacobescu.VotingApplication.repository.QueryRepository;
+import com.AlexandruIacobescu.VotingApplication.entities.Query;
+import com.AlexandruIacobescu.VotingApplication.repositories.QueryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 

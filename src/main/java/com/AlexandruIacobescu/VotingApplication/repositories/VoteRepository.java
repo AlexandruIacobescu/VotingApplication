@@ -1,6 +1,6 @@
-package com.AlexandruIacobescu.VotingApplication.repository;
+package com.AlexandruIacobescu.VotingApplication.repositories;
 
-import com.AlexandruIacobescu.VotingApplication.entity.Vote;
+import com.AlexandruIacobescu.VotingApplication.entities.Vote;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

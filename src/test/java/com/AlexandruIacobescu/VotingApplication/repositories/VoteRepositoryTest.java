@@ -1,16 +1,14 @@
-package com.AlexandruIacobescu.VotingApplication.repository;
+package com.AlexandruIacobescu.VotingApplication.repositories;
 
-import com.AlexandruIacobescu.VotingApplication.entity.Member;
-import com.AlexandruIacobescu.VotingApplication.entity.Query;
-import com.AlexandruIacobescu.VotingApplication.entity.Vote;
-import com.AlexandruIacobescu.VotingApplication.pojo.Category;
+import com.AlexandruIacobescu.VotingApplication.entities.Member;
+import com.AlexandruIacobescu.VotingApplication.entities.Query;
+import com.AlexandruIacobescu.VotingApplication.entities.Vote;
+import com.AlexandruIacobescu.VotingApplication.enums.Category;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Date;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class VoteRepositoryTest {

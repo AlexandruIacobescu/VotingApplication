@@ -1,8 +1,6 @@
-package com.AlexandruIacobescu.VotingApplication.entity;
+package com.AlexandruIacobescu.VotingApplication.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
-import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
